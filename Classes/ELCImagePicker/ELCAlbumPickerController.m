@@ -82,8 +82,8 @@
                 NSLog(@"A problem occured %@", [error description]);	                                 
             };	
                     
-            // Enumerate Albums
-            [self.library enumerateGroupsWithTypes:ALAssetsGroupAll
+            // Enumerate Saved Albums Only
+            [self.library enumerateGroupsWithTypes:ALAssetsGroupLibrary|ALAssetsGroupAlbum|ALAssetsGroupSavedPhotos
                                    usingBlock:assetGroupEnumerator 
                                  failureBlock:assetGroupEnumberatorFailure];
         
